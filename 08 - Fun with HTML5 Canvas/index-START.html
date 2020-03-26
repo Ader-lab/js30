@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <style>
+    html, body {
+    	margin: 0;
+    }
+    canvas {
+    	border: 1px solid;
+    }
+  </style>
+  
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+	;(function() {
+		let canvas = document.querySelector("#draw");
+		let ctx = canvas.getContext('2d');
+		ctx.strokeStyle = '#BADA55';
+
+
+		let drawing = false;
+		canvas.addEventListener("mousedown",() => {
+			drawing = true;
+			
+		})
+		canvas.addEventListener("mousemove",() => {
+			if(!drawing) return;
+			console.log(8);
+			
+		})
+		canvas.addEventListener("mouseup",() => {
+			drawing = false;
+			
+		})
+		canvas.addEventListener("mouseleave",() => {
+			drawing = false;
+			
+		})
+
+
+
+
+
+
+
+	})()
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="aaa">Axacfv</div>
+    <script>
+
+        const aaa = document.querySelector(".aaa");
+        let a = aaa.innerHTML;
+        let x = [...a];
+        let b = x.map(e => `<span>${e}</span>`).join('')
+        aaa.innerHTML = b;
+        console.log(x);
+        
+    </script>
+</body>
+</html>

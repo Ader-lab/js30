@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .zzz.xxx{
+            width: 200px;
+            height: 100px;
+            margin: 50px;
+            background-color: #faf;
+        }
+        .zzz{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: #faf;
+            transition: all 1s;
+            transform: translateX(0%)
+        }
+        /* .zzz:hover {
+            transform: translateX(100%);
+        } */
+
+        .zzz.slide-in {   
+            transform: translateX(100%) scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="zzz xxx">123</div>
+    <div class="zzz">456</div>
+    <button onclick=aaa()>xxxxxxx</button>
+
+    <script>
+
+        let zzz = document.querySelector(".zzz")
+
+        function aaa(){
+            zzz.classList.add("slide-in");
+        }
+
+
+
+    </script>
+</body>
+</html>
