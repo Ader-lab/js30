@@ -35,21 +35,25 @@
   </style>
 
 <script>
-
+  // offsetX/Y 是目標對象裡面的座標, 容器如果裡面又有容器offsetX/Y是會變的
 	let text = document.querySelector("h1");
 	let length = 200;
 	document
 	.querySelector(".hero")
 	.addEventListener("mousemove", function(e){
-		let { offsetX, offsetY } = e;
-		if(e.target !== this){       //e.target是摸到的DOM
+    let { offsetX, offsetY } = e;
+    // 如果e.target不等於this的話 就是因為碰到中間的sun
+    // 因為e.target是摸到的DOM，而this是觸發的app
+    // 這時候就在把離瀏覽器的距離加回去給他
+    if(e.target !== this){      
 			offsetY += e.target.offsetTop; 
 			offsetX += e.target.offsetLeft; 
-		}      
+    }      
+    // offsetX/this.offsetWidth變成百分比 
 		// 如果沒有*2-length他只會~1, 做了之後才會1到-1
 		let lengthX = Math.floor(((offsetX/this.offsetWidth) * length)*2-length);
 		let lengthY = Math.floor(((offsetY/this.offsetHeight) * length)*2-length);
-		console.log(offsetX/this.offsetWidth);
+		// console.log(offsetX/this.offsetWidth);
 		
 		text.style.textShadow = `
 			${lengthX}px ${lengthY}px 0px rgba(255,0,0,0.8),
